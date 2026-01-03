@@ -1,0 +1,10 @@
+Users 1---* Trips 1---* Stops *---1 Cities
+Stops 1---* Activities
+Trips 1---0..1 SharedTrips
+
+Users(id, name, email, password_hash, photo_url, language)
+Trips(id, user_id, name, start_date, end_date, description, cover_photo_url)
+Cities(id, name, country, region, cost_index, popularity)
+Stops(id, trip_id, city_id, start_date, end_date, order_index, stay_cost, transport_cost, meals_cost)
+Activities(id, stop_id, name, type, start_time, duration_minutes, cost, notes)
+SharedTrips(id, trip_id, share_id, is_public, created_at)
