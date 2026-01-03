@@ -67,8 +67,12 @@ export default function Profile() {
     }
   }
 
-  if (authLoading || !user) {
+  if (authLoading) {
     return <div className="p-8 text-center text-gray-500">Loading profile...</div>;
+  }
+
+  if (!user) {
+    return <div className="p-8 text-center text-red-500">Error: User not found. Please log in again.</div>;
   }
 
   return (
@@ -106,7 +110,7 @@ export default function Profile() {
             </div>
             <div>
               <h2 className="text-xl font-bold text-gray-900">{first_name} {last_name}</h2>
-              <p className="text-gray-500">{email}</p>
+              <p className="text-gray-500">{user.email}</p>
             </div>
           </div>
 
